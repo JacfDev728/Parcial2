@@ -1,0 +1,37 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "empresa.local" {
+    type master;
+    file "/etc/bind/db.empresa.local";
+    allow-transfer { any; };
+};
+
+zone "56.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.56.168.192";
+    allow-transfer { any; };
+};
+
+zone "jorgecortes.com" {
+    type master;
+    file "/etc/bind/db.jorgecortes.com";
+};
+
+
+/*
+// Zonas de la práctica anterior (deshabilitadas)
+zone "servicios.com" {
+    type master;
+    file "/etc/bind/db.servicios.com";
+};
+zone "miotrositio.com" {
+    type master;
+    file "/etc/bind/db.miotrositio.com";
+};
+*/
